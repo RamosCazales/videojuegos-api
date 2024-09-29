@@ -6,7 +6,7 @@ import {URL,DB_HOST, DB_DATABASE, DB_PORT} from "./config.js"
 import rutasJuegos from "./Routes/juegos.routes.js";
 import rutasAuth from "./Routes/Auth.routes.js";
 
-//const conexion = "mongodb://"+DB_HOST+":"+DB_PORT+"/"+DB_DATABASE
+const conexion = "mongodb://"+DB_HOST+":"+DB_PORT+"/"+DB_DATABASE
 mongoose.connect(URL).then()
 
 const app = express()
