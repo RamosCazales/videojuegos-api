@@ -34,7 +34,7 @@ export const login = async(req,res) =>{
         var validacion = validar('nombre', correo, password)
         if(validacion == ''){
             let info = await UsuarioModel.findOne({correo:correo})
-            if(info.length === 0 || !(await bcryptjs.compare(password,info.password))){
+            if(info.length == 0 || !(await bcryptjs.compare(password,info.password))){
                 return res.status(404).json({status:false,errors:['Usuario no existe']})
             }
             const token = Jwt.sign({id:info._id}, JWT_SECRET, {
